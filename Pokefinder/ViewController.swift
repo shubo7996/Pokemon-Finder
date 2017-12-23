@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate {
 
+    @IBOutlet weak var mapView: MKMapView!
+    
+    let locationmanager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        mapView.delegate =  self
+        mapView.userTrackingMode = MKUserTrackingMode.follow
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +28,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func spotPoke(_ sender: Any) {
+    }
+    
+    
 }
 
